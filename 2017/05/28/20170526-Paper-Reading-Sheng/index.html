@@ -1,0 +1,748 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="OverviewIntroduction Applications of surface plasmon polaritions(SPPs). Introduction to MIM WGs and plasmonic wavelength demultiplexing. The works of this paper.  Simulation and analysis of channel dr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20170526 Paper Reading Sheng">
+<meta property="og:url" content="http://OptLab.github.io/2017/05/28/20170526-Paper-Reading-Sheng/index.html">
+<meta property="og:site_name" content="Optical Lab">
+<meta property="og:description" content="OverviewIntroduction Applications of surface plasmon polaritions(SPPs). Introduction to MIM WGs and plasmonic wavelength demultiplexing. The works of this paper.  Simulation and analysis of channel dr">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/D3CF436D983B4A0F933349284028C48D">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/A67518A8AFC24576A45C58B557B8BD86">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/532A26AE61194E07881C4833575DBE4E">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/1EA107C19DC342A8873A9D7AC9B31F87">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/83376326857F4481BCB3C26335036E3B">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/5663705337F341B1A94283A4A91EE108">
+<meta property="og:updated_time" content="2017-05-28T14:23:11.907Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="20170526 Paper Reading Sheng">
+<meta name="twitter:description" content="OverviewIntroduction Applications of surface plasmon polaritions(SPPs). Introduction to MIM WGs and plasmonic wavelength demultiplexing. The works of this paper.  Simulation and analysis of channel dr">
+<meta name="twitter:image" content="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/D3CF436D983B4A0F933349284028C48D">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://OptLab.github.io/2017/05/28/20170526-Paper-Reading-Sheng/"/>
+
+
+
+
+
+  <title>20170526 Paper Reading Sheng | Optical Lab</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Optical Lab</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">The future you see is the future you get.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://OptLab.github.io/2017/05/28/20170526-Paper-Reading-Sheng/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OptLab">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Optical Lab">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20170526 Paper Reading Sheng</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-28T23:22:41+09:00">
+                2017-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li>Applications of surface plasmon polaritions(SPPs).</li>
+<li>Introduction to MIM WGs and plasmonic wavelength demultiplexing.</li>
+<li>The works of this paper.</li>
+</ul>
+<h2 id="Simulation-and-analysis-of-channel-drop-filters"><a href="#Simulation-and-analysis-of-channel-drop-filters" class="headerlink" title="Simulation and analysis of channel drop filters"></a>Simulation and analysis of channel drop filters</h2><ul>
+<li>The structure of the MIM waveguide with a channel drop filter.</li>
+<li>The relationship between the geometric parameters and the transmitted-peak wavelength with the explanation.</li>
+</ul>
+<h2 id="Design-and-discussion-of-demultiplexing-structures"><a href="#Design-and-discussion-of-demultiplexing-structures" class="headerlink" title="Design and discussion of demultiplexing structures"></a>Design and discussion of demultiplexing structures</h2><ul>
+<li>The triple-wavelength demultiplexing structure with three drop channel filters.</li>
+<li>Introducing a reflector in the in the bus waveguide to improve the transmission efficiencies.</li>
+<li>Selecting proper reflection length for higher efficiencies.</li>
+</ul>
+<h1 id="The-works-of-this-paper"><a href="#The-works-of-this-paper" class="headerlink" title="The works of this paper"></a>The works of this paper</h1><ul>
+<li>Designed nanoscale plasmonic WDM structures based on the MIM waveguides.</li>
+<li>Investigated this structure numerically by FDTD simulations.</li>
+<li>Demultiplexing wavelength of each channel can be easily manipulated by adjusting the geometrical parameters and refractive index of the resonator</li>
+<li>The transmission characteristics of the drop waveguide strongly depend on the coupling distance between the resonator and the waveguides.</li>
+<li>The transmission efficiency of each channel is improved by at least 1.8× then when a reflection feedback is introduced in the bus waveguide</li>
+</ul>
+<h1 id="The-structure-of-the-MIM-waveguide-with-a-channel-drop-filter"><a href="#The-structure-of-the-MIM-waveguide-with-a-channel-drop-filter" class="headerlink" title="The structure of the MIM waveguide with a channel drop filter"></a>The structure of the MIM waveguide with a channel drop filter</h1><ul>
+<li>The incident wave is coupled into the waveguide, and the SPP wave forms on the metal interfaces .</li>
+<li>The incident power is partly coupled into the nanocavity nearby the bus waveguide.</li>
+<li>The nanocavity functions as a resonator and can transmit the special light signals to the drop waveguide.<br><img src="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/D3CF436D983B4A0F933349284028C48D" alt="Fig.1"><br>Fig. 1. (a) Schematic diagram of the MIM waveguide with a channel drop filter. (b) Transmission spectrum of the drop waveguide. The inset shows the field distribution of | Hz | at the transmitted-peak wavelength of 946 nm.</li>
+</ul>
+<h1 id="The-relationship-between-the-geometric-parameters-and-the-transmitted-peak-wavelength"><a href="#The-relationship-between-the-geometric-parameters-and-the-transmitted-peak-wavelength" class="headerlink" title="The relationship between the geometric parameters and the transmitted-peak wavelength"></a>The relationship between the geometric parameters and the transmitted-peak wavelength</h1><p><img src="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/A67518A8AFC24576A45C58B557B8BD86" alt=""><br>Fig. 2. Transmitted-peak wavelength versus (a) the length of the cavity when w = 60 nm, (b) the width of the cavity when d = 300 nm, and (c) the refractive index of the cavity when d = 300 nm and w = 60 nm.<br><img src="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/532A26AE61194E07881C4833575DBE4E" alt=""></p>
+<h1 id="The-resonant-theory-of-the-rectangular-cavity"><a href="#The-resonant-theory-of-the-rectangular-cavity" class="headerlink" title="The resonant theory of the rectangular cavity"></a>The resonant theory of the rectangular cavity</h1><ul>
+<li>When incident wave from position P transmits along bus waveguide, part of the wave is coupled into the cavity.</li>
+<li>The forward and backward waves are almost completely reflected in the air-Ag interfaces at the two ends of the cavity.</li>
+<li>The cavity is like a resonator, and standing waves can be formed with some appropriate conditions.</li>
+</ul>
+<p>$$<br>\left\{<br>\begin{array}{lr}<br>∆φ=k(ω)∙2d+φ_{ref1}+φ_{ref2}\\<br>∆φ=m∙2π\\<br>k(ω)=\frac{2π}{λ} Re(n_{eff} ) )<br>\end{array}<br>\right.<br>$$</p>
+<p>$$<br>λ_m=\frac{2Re(n_{eff} )d}{m-\frac{φ_{ref1}+φ_{ref2}}{2π}}<br>$$</p>
+<p>$\Delta\varphi$is the phase delay per round-trip in the cavity. k(ω) is the angular wavenumber of the wave in cavity at frequency ω. $φ_{ref1}$ and $φ_{ref2 }$stand for reflective phase shifts on the lower and upper facets of the cavity.</p>
+<p><img src="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/1EA107C19DC342A8873A9D7AC9B31F87" alt=""><br>Fig. 3. (a) Re(neff) versus the incident wavelength and the width of the nanocavity. (b) Re(neff) versus the incident wavelength and the refractive index of the nanocavity with w=60nm.</p>
+<p>(a)</p>
+<ul>
+<li>Re(neff) is nearly independent of wavelength from 800 to 1200nm.</li>
+<li>Re(neff) exhibits a nonlinear decrease for increasing the width w.</li>
+</ul>
+<p>(b)</p>
+<ul>
+<li>Re(neff) linearly increases with the refractive index at the arbitrary wavelength from 900 to 1800nm.</li>
+<li>Re(neff) is invariable at different wavelengths when the refractive index nd is fixed.</li>
+</ul>
+<p><img src="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/83376326857F4481BCB3C26335036E3B" alt=""></p>
+<p><img src="http://note.youdao.com/yws/public/resource/c1b911fc6b494b442aea0396799759b6/5663705337F341B1A94283A4A91EE108" alt=""></p>
+<p>Fig. 4. Transmission spectra with different coupling distances. The other parameters are the same as that in Fig. 1.</p>
+<ul>
+<li>The transmission peak decreases with the increase of g.</li>
+<li>The bandwidth of the transmission spectrum decreases with the increase of g.</li>
+</ul>
+<h1 id="The-temporal-coupled-mode-theory"><a href="#The-temporal-coupled-mode-theory" class="headerlink" title="The temporal coupled-mode theory"></a>The temporal coupled-mode theory</h1><p>a is the normalized mode amplitude in the resonator.<br>$$<br>a=e^{j\omega_0t}\\<br>\frac{da}{dt}=j\omega_0a<br>$$<br>If the system is lossy, then<br>$$<br>\frac{da}{dt}=jω_0 a-\frac{1}{τ_i}  a ,a= e^{jω_0 t} e^{\frac{-t}{τ_i }}<br>$$<br>If the resonator is coupled to an external waveguide or to the outside space, two effects must be accounted for: (1)Modification of decay rate;(2)The excitation of mode amplitude a by incident wave.</p>
+<p>(1) The decay rate of the mode is modified because now power is not only dissipated internally but also escapes into the external waveguide or outside space.</p>
+<p>$$<br>\frac{da}{dt}=j\omega_0a-\left(\frac{1}{\tau_i}+\frac{1}{\tau_e}\right)a</p>
+<p>$$<br>$\frac{1}{\tau_e}$ is the rate of decay due to escaping power.<br>(2) Due to the incident source, the s+ serves as a drive for a.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/27/Seminar-Arrangement-From-20170601/" rel="next" title="Seminar Arrangement From 2017-06-01">
+                <i class="fa fa-chevron-left"></i> Seminar Arrangement From 2017-06-01
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="OptLab" />
+          <p class="site-author-name" itemprop="name">OptLab</p>
+           
+              <p class="site-description motion-element" itemprop="description">Make note of everyday.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simulation-and-analysis-of-channel-drop-filters"><span class="nav-number">1.2.</span> <span class="nav-text">Simulation and analysis of channel drop filters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-and-discussion-of-demultiplexing-structures"><span class="nav-number">1.3.</span> <span class="nav-text">Design and discussion of demultiplexing structures</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-works-of-this-paper"><span class="nav-number">2.</span> <span class="nav-text">The works of this paper</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-structure-of-the-MIM-waveguide-with-a-channel-drop-filter"><span class="nav-number">3.</span> <span class="nav-text">The structure of the MIM waveguide with a channel drop filter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-relationship-between-the-geometric-parameters-and-the-transmitted-peak-wavelength"><span class="nav-number">4.</span> <span class="nav-text">The relationship between the geometric parameters and the transmitted-peak wavelength</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-resonant-theory-of-the-rectangular-cavity"><span class="nav-number">5.</span> <span class="nav-text">The resonant theory of the rectangular cavity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-temporal-coupled-mode-theory"><span class="nav-number">6.</span> <span class="nav-text">The temporal coupled-mode theory</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OptLab</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
